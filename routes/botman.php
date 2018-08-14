@@ -20,6 +20,12 @@ $botman->hears('dialogflow_greet', function (\BotMan\BotMan\BotMan $bot) {
 
     $bot->reply("Connexion ok avec dialogflow");
 })->middleware($dialogflow);
+$botman->hears('computer_list', function (\BotMan\BotMan\BotMan $bot) {
+
+
+    $bot->reply("Liste des ordinateurs \n
+     -- HP 15 \n -- Toshiba Satelite \n -- Accer \n -- Azus \n -- Macbook Pro");
+})->middleware($dialogflow);
 
 // Apply global "received" middleware
 $botman->middleware->received($dialogflow);
