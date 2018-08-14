@@ -10,7 +10,7 @@ $dialogflow = ApiAi::create('2a9e73da4eb047de9ab9d9e90ed5b2f6')->listenForAction
 // Apply global "received" middleware
 $botman->middleware->received($dialogflow);
 // Apply matching middleware per hears command
-$botman->hears('hellofrom dialogflow', function (\BotMan\BotMan\BotMan $bot) {
+$botman->hears('dialogflow_greet', function (\BotMan\BotMan\BotMan $bot) {
     // The incoming message matched the "my_api_action" on Dialogflow
     // Retrieve Dialogflow information:
     /* $extras = $bot->getMessage()->getExtras();
