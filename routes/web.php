@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
+Route::get('/bot', 'BotManController@bot')->middleware('verifybot');
+Route::post('/botman', 'BotManController@bot');
