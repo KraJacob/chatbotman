@@ -15,7 +15,7 @@ class verifybot
      */
     public function handle($request, Closure $next)
     {
-        if($request->input('hub_mode') === 'subscribe' && $request->input('hub_verify_token') === env("FACEBOOK_TOKEN")){
+        if($request->input('hub_mode') === 'subscribe' && $request->input('hub_verify_token') === env("FACEBOOK_VERIFICATION")){
             return response($request->input("hub_challenge"),200);
         }
         return $next($request);
