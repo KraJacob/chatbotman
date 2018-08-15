@@ -40,7 +40,7 @@ class BotManController extends Controller
      */
     public function bot(Request $request)
     {
-        $data = $request->all();
+         $data = $request->all();
         // get user's id
         $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
         //get message
@@ -53,6 +53,7 @@ class BotManController extends Controller
 
     public function sendMessage($recipienId, $message)
     {
+
         $messageData = [
                     "recipient" =>["id"=>$recipienId],
                      "message"  =>["text"=>$message]
